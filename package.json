@@ -244,8 +244,11 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "montana0101@outlook.com",
+      "repo": "pc_app_ai",
+      "private":true,
+      "token":"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",
+      "releaseType":"release"
     }
   },
   "collective": {
