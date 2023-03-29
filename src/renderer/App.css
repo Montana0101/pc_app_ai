@@ -1,0 +1,104 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+
+html {
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  position: relative;
+  color: white;
+  height: 100%;
+  background: linear-gradient(200.96deg,
+      #fedc2a -29.09%,
+      #dd5789 51.77%,
+      #7a2c9e 129.35%);
+  font-family: sans-serif;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  /* padding:20px; */
+  box-sizing: border-box;
+  align-items: center;
+  margin: 0;
+}
+
+/* button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  appearance: none;
+  font-size: 1.3rem;
+  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  opacity: 0.9;
+} */
+/* 
+button:hover {
+  transform: scale(1.05);
+  opacity: 1;
+} */
+/* 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+ */
+
+#root {
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid red; */
+  
+}
+
+.ant-menu{
+  border:none !important;
+  border-inline-end:none !important;
+}
+
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.site-layout {
+  /* border:10px solid blanchedalmond; */
+  /* background: linear-gradient(
+    200.96deg,
+    #fedc2a -29.09%,
+    #dd5789 51.77%,
+    #7a2c9e 129.35%
+  ); */
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  margin: 16px;
+  /* background: rgba(255, 255, 255, 0.3); */
+}

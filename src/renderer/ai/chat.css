@@ -1,0 +1,115 @@
+.content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: white;
+    font-size: 14px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    height: 100%;
+    color: black;
+    /* border:1px solid red; */
+}
+
+.chat_layout {
+    background-color: rgba(211, 211, 211, 0.4);
+    height: 300px;
+    flex: 1;
+    padding: 20px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 100px;
+    overflow-y: scroll;
+}
+
+.chat_col {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.chat_col_left {
+    box-sizing: border-box;
+    display: flex;
+    width: 80%;
+    margin-top: 5px;
+}
+
+.chat_col_left img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat_col_left .chat_col_text {
+    background-color: white;
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-left: 5px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.chat_col_right {
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+}
+
+.chat_col_right .chat_col_text {
+    background-color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    line-height: 35px;
+    margin-left: 20px;
+}
+
+.tabbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    /* background-color: red; */
+    background-color: white;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.tabbar>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1
+}
+
+.tabbar_left {
+    display: flex;
+}
+
+
+button {
+    background-color: "red";
+    height: 100%;
+    width: 100px;
+    font-size: 3;
+    margin-left: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
