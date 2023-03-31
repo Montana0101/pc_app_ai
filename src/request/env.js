@@ -15,6 +15,9 @@ const getProxyUrl = () => {
 export const proxy_url =getProxyUrl();
 
 export const chatgpt_url = "https://www.jslifhr.com/ai" // 代理转发
+export const stalediffusion = 'https://stablediffusionapi.com/api' 
+
+export const statediffusionKey = "wndRxdRuD26yDj15l8NL1w0uyZXKWpyX2sQLF9kGVwCpCbWJqNORItZFqgbL" // 
 // export const chatgpt_url = "http://43.156.50.241:5000"
 // export const proxy_url = 'http://101.43.49.47:8880'
 export const ThemeColor = "#51AA52";

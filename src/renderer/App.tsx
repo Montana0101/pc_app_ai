@@ -15,6 +15,8 @@ import {
 import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
 import ChatModule from './ai/chat';
+import Text2ImgModule from './text2img';
+import Login from "./login";
 const { Header, Content, Footer, Sider } = Layout;
 
 import './App.css';
@@ -52,7 +54,7 @@ const items: MenuProps['items'] = [{
 
 const Hello: React.FC = () => {
   const [current, setCurrent] = useState('mail');
-  const [key,setKey] = useState(0);
+  const [key,setKey] = useState(1);
 
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -61,14 +63,15 @@ const Hello: React.FC = () => {
 
   const _changeMenu = (e:any) => {
     if(e.key == '1'){
-      
+      setKey(1)
     }
     setKey(e.key*1)
     console.log("大音希sands看",e)
   }
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <Layout style={{height:"100%",boxShadow:"border-box"}}>
+      <Login/>
+      {/* <Layout style={{height:"100%",boxShadow:"border-box"}}>
         <Sider trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
           <Menu
@@ -76,17 +79,18 @@ const Hello: React.FC = () => {
             mode="inline"
             defaultSelectedKeys={['1']}
             onClick={(e)=>{_changeMenu(e)}}
+            style={{paddingTop:64}}
             items={[
               {
                 key: '1',
                 icon: <UserOutlined />,
-                label: 'ChatGPT',
+                label: '智能会话',
               },
-              // {
-              //   key: '2',
-              //   icon: <VideoCameraOutlined />,
-              //   label: 'nav 2',
-              // },
+              {
+                key: '2',
+                icon: <VideoCameraOutlined />,
+                label: '图像生成',
+              },
               // {
               //   key: '3',
               //   icon: <UploadOutlined />,
@@ -110,10 +114,11 @@ const Hello: React.FC = () => {
               background: colorBgContainer,
             }}
           >
-            <ChatModule/>
+           {key ==1 &&  <ChatModule/>}
+           {key ==2 && <Text2ImgModule/>}
           </Content>
         </Layout>
-      </Layout>
+      </Layout> */}
     </div>
   );
 };

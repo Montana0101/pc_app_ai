@@ -1,5 +1,5 @@
 // import { fetchGadget } from "./util";
-import { proxy_url, chatgpt_url } from "./env";
+import { proxy_url, chatgpt_url,stalediffusion } from "./env";
 
 const project = "";
 var myHeaders = new Headers();
@@ -11,6 +11,21 @@ export const fetchChatGPT = (params) => {
     method: "POST",
     headers: myHeaders,
     body: JSON.stringify(params),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      return res;
+    });
+}
+
+// stable diffusion
+export const fetchText2Img = (params)=> {
+  return fetch(chatgpt_url + '/text2img', {
+    method: "POST",
+    headers: myHeaders,
+    body: JSON.stringify({params:params}),
   })
     .then((res) => {
       return res.json();

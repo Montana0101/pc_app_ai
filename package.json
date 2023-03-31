@@ -11,7 +11,7 @@
     "hot",
     "reload"
   ],
-  "name":"AI",
+  "name": "AI",
   "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
   "bugs": {
     "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
@@ -34,6 +34,9 @@
   "main": "./src/main/main.ts",
   "scripts": {
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
+    "win":"electron-builder build --win",
+    "mac":"electron-builder build --mac",
+    "release":"electron-builder build --win -p always",
     "build:main": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.main.prod.ts",
     "build:renderer": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.prod.ts",
     "postinstall": "ts-node .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts",
@@ -174,7 +177,7 @@
   "build": {
     "productName": "AI",
     "appId": "org.erb.ai",
-    "copyright": "1.0.0", 
+    "copyright": "1.0.0",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -217,16 +220,16 @@
       ]
     },
     "nsis": {
-      "oneClick": false, 
+      "oneClick": false,
       "allowElevation": false,
-      "allowToChangeInstallationDirectory": true,  
-      "installerIcon": "./build/icons/earth.ico", 
-      "uninstallerIcon": "./build/icons/earth.ico", 
-      "installerHeaderIcon": "./build/icons/earth.ico", 
-      "createDesktopShortcut": true, 
-      "createStartMenuShortcut": true, 
-      "shortcutName": "AI", 
-      "include": "./build/script/installer.nsh" 
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./build/icons/logo.ico",
+      "uninstallerIcon": "./build/icons/logo.ico",
+      "installerHeaderIcon": "./build/icons/logo.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AI",
+      "include": "./build/script/installer.nsh"
     },
     "linux": {
       "target": [
@@ -246,9 +249,9 @@
       "provider": "github",
       "owner": "montana0101@outlook.com",
       "repo": "pc_app_ai",
-      "private":true,
-      "token":"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",
-      "releaseType":"release"
+      "private": true,
+      "token": "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",
+      "releaseType": "release"
     }
   },
   "collective": {
