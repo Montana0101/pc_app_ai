@@ -37,11 +37,18 @@ export const fetchText2Img = (params)=> {
 
 // 登录 >> 用户名密码
 export const checkUserLogin = (params) => {
-  // let { name, password } = params;
-  const url = `${project}/user/login`;
-  return fetchGadget(url, "POST", params);
-};
-
+  return fetch(proxy_url + '/user/login', {
+    method: "POST",
+    headers: myHeaders,
+    body: JSON.stringify(params),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      return res;
+    });
+}
 
 // 用户管理 >> 添加用户
 export const addUser = (params) => {

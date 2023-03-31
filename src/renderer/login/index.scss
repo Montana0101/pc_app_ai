@@ -37,9 +37,24 @@
                 font-size: 12px;
                 flex: 1;
                 border: 1px solid red;
+                padding:0 10px;
                 border-radius: 5px;
                 color: rgb(245, 9, 9);
                 background-color: rgb(222, 222, 222, 0.3);
+            }
+
+            button{
+                border:1px solid red;
+                background-color: #4096FF30;
+                color:red;
+                font-size: 12px;
+                height: 50px;
+                width: 50px;
+                margin-top: 50px;
+                border-radius: 50%;
+                padding:0 20px;
+                align-self: center;
+                align-items: center;
             }
         }
     }
