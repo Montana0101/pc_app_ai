@@ -68,6 +68,7 @@ const Text2ImgModule = () => {
     return (
         <div class="content">
             <div class="text2img_layout">
+            <i className="top"></i><i className="bottom"></i>
                 {
                     list.map((item, index) => {
                         return <div class="ui_col">

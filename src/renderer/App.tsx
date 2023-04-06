@@ -96,7 +96,7 @@ const Hello: React.FC = () => {
               {
                 key: '1',
                 icon: <TeamOutlined />,
-                label: 'AI导航',
+                label: 'AI文案',
               }, {
                 key: '2',
                 icon: <UserOutlined />,

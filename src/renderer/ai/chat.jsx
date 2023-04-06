@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./chat.css";
 import { Input, Button, showLoading } from "antd";
 import { fetchChatGPT } from "../../request/api";
+import "./index.scss";
 
 const ChatModule = () => {
     const img = "https://lifankeji.oss-cn-hangzhou.aliyuncs.com/crm/%E7%AB%8B%E5%B8%86/logo.png"
@@ -37,6 +37,8 @@ const ChatModule = () => {
     return (
         <div class="content">
             <div class="chat_layout">
+            <i className="top"></i><i className="bottom"></i>
+
                 {
                     list.map((item, index) => {
                         return <div class="chat_col">

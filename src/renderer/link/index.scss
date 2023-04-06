@@ -2,15 +2,17 @@
     color: black;
     height: 100%;
     width: 100%;
-    border: 1px solid red;
+    // border: 1px solid red;
     background-color: #f2eef6;
     position: relative;
     overflow: hidden;
+    padding:0 20px;
     ul {
         display: flex;
-        border: 1px solid navy;
+        // border: 1px solid navy;
         padding:0;
         margin:0;
+        flex-direction: column;
         li {
             width: 100%;
             display: flex;
@@ -23,6 +25,8 @@
                 border-radius: 5px;
                 width: 25%;
                 height: 60px;
+                box-sizing: border-box;
+                
                 // align-items: center;
                 cursor: pointer;
                 display: flex;
@@ -32,7 +36,7 @@
                 }
 
                 ._content {
-                    font-size: 12px;
+                    font-size: 10px;
                     height: auto;
                     display: flex;
                     flex-direction: column;
@@ -40,7 +44,7 @@
 
                     ._title {
                         font-weight: bold;
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -55,6 +59,10 @@
                 overflow: hidden;
                 background-color: #e2f4f4;
                 padding:0 10px;
+                height: 80px;
+                // vertical-align: middle;
+                display: flex;
+                align-items: center;
                 // overflow-y: scroll;
                 &::before {
                     content: ' ';
