@@ -1,6 +1,6 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   AppstoreOutlined,
@@ -16,7 +16,9 @@ import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
 import ChatModule from './ai/chat';
 import Text2ImgModule from './text2img';
+import LinkCModule from './link';
 import Login from "./login";
+import { useNavigate } from 'react-router-dom';
 const { Header, Content, Footer, Sider } = Layout;
 
 import './App.css';
@@ -42,7 +44,7 @@ const items: MenuProps['items'] = [{
   key: "1"
 }, {
   icon: React.createElement(VideoCameraOutlined),
-  label: "mj图像生成",
+  label: "图像生成",
   key: "2"
 },
 {
@@ -54,40 +56,54 @@ const items: MenuProps['items'] = [{
 
 const Hello: React.FC = () => {
   const [current, setCurrent] = useState('mail');
-  const [key,setKey] = useState(1);
+  const [key, setKey] = useState(1);
+  const navigate = useNavigate();
 
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
 
-  const _changeMenu = (e:any) => {
-    if(e.key == '1'){
+  const _changeMenu = (e: any) => {
+    if (e.key == '1') {
       setKey(1)
     }
-    setKey(e.key*1)
-    console.log("大音希sands看",e)
+    setKey(e.key * 1)
   }
+
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
+  }, [])
+
+
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <Login/>
-      {/* <Layout style={{height:"100%",boxShadow:"border-box"}}>
+      {/* <Login/> */}
+      <Layout style={{ height: "100%", boxShadow: "border-box" }}>
         <Sider trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
           <Menu
             theme="dark"
             mode="inline"
             defaultSelectedKeys={['1']}
-            onClick={(e)=>{_changeMenu(e)}}
-            style={{paddingTop:64}}
+            onClick={(e) => { _changeMenu(e) }}
+            style={{ paddingTop: 64 }}
             items={[
               {
                 key: '1',
+                icon: <TeamOutlined />,
+                label: 'AI导航',
+              }, {
+                key: '2',
                 icon: <UserOutlined />,
                 label: '智能会话',
               },
               {
-                key: '2',
+                key: '3',
                 icon: <VideoCameraOutlined />,
                 label: '图像生成',
               },
@@ -114,11 +130,12 @@ const Hello: React.FC = () => {
               background: colorBgContainer,
             }}
           >
-           {key ==1 &&  <ChatModule/>}
-           {key ==2 && <Text2ImgModule/>}
+            {key == 1 && <LinkCModule />}
+            {key == 2 && <ChatModule />}
+            {key == 3 && <Text2ImgModule />}
           </Content>
         </Layout>
-      </Layout> */}
+      </Layout>
     </div>
   );
 };
@@ -128,6 +145,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Hello />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </Router>
   );

@@ -34,9 +34,9 @@
   "main": "./src/main/main.ts",
   "scripts": {
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
-    "win":"electron-builder build --win",
-    "mac":"electron-builder build --mac",
-    "release":"electron-builder build --win -p always",
+    "win": "electron-builder build --win",
+    "mac": "electron-builder build --mac",
+    "release": "electron-builder build --win -p always",
     "build:main": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.main.prod.ts",
     "build:renderer": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.prod.ts",
     "postinstall": "ts-node .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts",
@@ -105,7 +105,7 @@
     "less-loader": "^11.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
     "@electron/notarize": "^1.2.3",
@@ -168,7 +168,7 @@
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.9.5",
     "url-loader": "^4.1.1",
-    "webpack": "^5.75.0",
+    "webpack": "^5.78.0",
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1",
@@ -218,18 +218,6 @@
       "target": [
         "nsis"
       ]
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowElevation": false,
-      "allowToChangeInstallationDirectory": true,
-      "installerIcon": "./build/icons/logo.ico",
-      "uninstallerIcon": "./build/icons/logo.ico",
-      "installerHeaderIcon": "./build/icons/logo.ico",
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "AI",
-      "include": "./build/script/installer.nsh"
     },
     "linux": {
       "target": [

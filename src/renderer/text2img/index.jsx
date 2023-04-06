@@ -13,6 +13,23 @@ const Text2ImgModule = () => {
         img: null
     }])
 
+    // 打开新窗口
+// const openDefaultBrowser = function (url) {
+//     var exec = require('child_process').exec;
+//     console.log(process.platform)
+//     switch (process.platform) {
+//       case "darwin":
+//         exec('open ' + url);
+//         break;
+//       case "win32":
+//         exec('start ' + url);
+//         break;
+//       default:
+//         exec('xdg-open', [url]);
+//     }
+//   }
+
+
     const _submit = async function () {
         let params = {
             key: statediffusionKey,
@@ -63,7 +80,7 @@ const Text2ImgModule = () => {
                                 <img src={img} className="logo" />
                                 <div class="ui_col_text">
                                     <img src={item.img} style={{width:300,height:300,borderRadius:"0 !important"}} />
-                                    <a src={item.img} >
+                                    <a src={item.img} onClick={()=>{}}>
                                      <span style={{color:"#80344c"}}>图片链接</span>: <span>{item.img}</span></a>
                                 </div>
                             </div>) :
