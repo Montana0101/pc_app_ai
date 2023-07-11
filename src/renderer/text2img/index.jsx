@@ -8,7 +8,7 @@ const Text2ImgModule = () => {
     const img = "https://lifankeji.oss-cn-hangzhou.aliyuncs.com/crm/%E7%AB%8B%E5%B8%86/logo.png"
     const [question, setQuestion] = useState("")
     const [list, setList] = useState([{
-        msg: "Hi，这里是图像生成AI，请输入关于生成图片的描述关键词，例如：男性、中年、白皮肤、背景在家等",
+        msg: "Hi，这里是图像生成AI，请输入关于生成图片的描述关键词，例如：男性、中年、白皮肤、背景在家等，建议使用智能会话生成英文描述后再使用该功能",
         type: 0,
         img: null
     }])

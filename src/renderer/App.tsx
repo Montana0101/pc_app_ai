@@ -16,46 +16,16 @@ import type { MenuProps } from 'antd';
 import { Layout, Menu, theme } from 'antd';
 import ChatModule from './ai/chat';
 import Text2ImgModule from './text2img';
-import LinkCModule from './link';
+import TextLinkCModule from './link/text';
+import ImgLinkCModule from './link/img';
 import Login from "./login";
 import { useNavigate } from 'react-router-dom';
 const { Header, Content, Footer, Sider } = Layout;
 
 import './App.css';
 
-// const items: MenuProps['items'] = [
-//   UserOutlined,
-//   VideoCameraOutlined,
-//   UploadOutlined,
-//   BarChartOutlined,
-//   // CloudOutlined,
-//   // AppstoreOutlined,
-//   // TeamOutlined,
-//   // ShopOutlined,
-// ].map((icon, index) => ({
-//   key: String(index + 1),
-//   icon: React.createElement(icon),
-//   label: `nav ${index + 1}`,
-// }));
-
-const items: MenuProps['items'] = [{
-  icon: React.createElement(UserOutlined),
-  label: "chatGPT",
-  key: "1"
-}, {
-  icon: React.createElement(VideoCameraOutlined),
-  label: "图像生成",
-  key: "2"
-},
-{
-  icon: React.createElement(UploadOutlined),
-  label: "d-id视频生成",
-  key: "3"
-},
-]
 
 const Hello: React.FC = () => {
-  const [current, setCurrent] = useState('mail');
   const [key, setKey] = useState(1);
   const navigate = useNavigate();
 
@@ -96,16 +66,20 @@ const Hello: React.FC = () => {
               {
                 key: '1',
                 icon: <TeamOutlined />,
-                label: 'AI文案',
+                label: 'AI文案生成',
               }, {
                 key: '2',
+                icon: <TeamOutlined />,
+                label: 'AI图片处理',
+              }, {
+                key: '6',
                 icon: <UserOutlined />,
-                label: '智能会话',
+                label: 'AI智能会话',
               },
               {
-                key: '3',
+                key: '7',
                 icon: <VideoCameraOutlined />,
-                label: '图像生成',
+                label: 'AI生成图片',
               },
               // {
               //   key: '3',
@@ -130,9 +104,10 @@ const Hello: React.FC = () => {
               background: colorBgContainer,
             }}
           >
-            {key == 1 && <LinkCModule />}
-            {key == 2 && <ChatModule />}
-            {key == 3 && <Text2ImgModule />}
+            {key == 1 && <TextLinkCModule />}
+            {key == 2 && <ImgLinkCModule />}
+            {key == 6 && <ChatModule />}
+            {key == 7 && <Text2ImgModule />}
           </Content>
         </Layout>
       </Layout>
